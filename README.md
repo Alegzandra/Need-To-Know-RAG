@@ -240,12 +240,9 @@ deploy/helm/  Kubernetes chart
 
 ## Roadmap
 
-- OIDC/JWT (Keycloak) instead of API keys; attributes from the identity provider (ABAC)
-- Person-name and location detection (NER) for redaction, e.g. a Romanian spaCy model or an LLM-based NER step
-- Central append-only audit sink (SIEM) so the API can scale horizontally
-- Throughput, latency and VRAM benchmarks for vLLM vs Ollama at different concurrency levels, for GPU sizing
-- A cross-encoder reranker after RRF, and a larger labelled set for retrieval metrics
-- Red-team suite for prompt injection inside documents
+See **[ROADMAP.md](ROADMAP.md)** for the vision, personas, success metrics and the Now / Next / Later plan.
+In short: **v0.2** real-model baselines, single sign-on and prompt-injection defences;
+**v0.3** central audit sink, vLLM benchmarks and observability; **later** a web UI and GraphRAG.
 
 ## Note
 
