@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "ntk.fullname" . }}
+  labels: {{- include "ntk.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  strategy: { type: Recreate }
+  selector:
+    matchLabels: {{- include "ntk.selector" . | nindent 6 }}
+  template:
+    metadata:
+      labels: {{- include "ntk.selector" . | nindent 8 }}
+    spec:
+      automountServiceAccountToken: false
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        fsGroup: 10001
+        seccompProfile: { type: RuntimeDefault }
+      containers:
+        - name: api
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports: [{ name: http, containerPort: 8080 }]
+          env:
+            - { name: NTK_DATA_DIR, value: /data }
+            - { name: NTK_USERS_FILE, value: /config/users/users.yaml }
+            - { name: NTK_COMPARTMENTS_FILE, value: /config/compartments/compartments.yaml }
+            {{- range $k, $v := .Values.env }}
+            - { name: {{ $k }}, value: {{ $v | quote }} }
+            {{- end }}
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: { drop: [ALL] }
+          readinessProbe: { httpGet: { path: /health, port: http }, periodSeconds: 10 }
+          livenessProbe: { httpGet: { path: /health, port: http }, periodSeconds: 30, initialDelaySeconds: 10 }
+          resources: {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            - { name: data, mountPath: /data }
+            - { name: tmp, mountPath: /tmp }
+            - { name: users, mountPath: /config/users, readOnly: true }
+            - { name: compartments, mountPath: /config/compartments, readOnly: true }
+      volumes:
+        - name: data
+          persistentVolumeClaim: { claimName: {{ include "ntk.fullname" . }}-data }
+        - { name: tmp, emptyDir: {} }
+        - name: users
+          secret: { secretName: {{ include "ntk.usersSecret" . }} }
+        - name: compartments
+          configMap: { name: {{ include "ntk.fullname" . }}-compartments }

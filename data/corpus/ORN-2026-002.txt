@@ -1,0 +1,9 @@
+SECRET//ORION//REL TO ROU, NATO
+DOC-ID: ORN-2026-002
+TITLE: ORION - coordinated UAS reconnaissance against critical infrastructure
+
+Drone overflights at substation S-17 Vârful Alb and at the Port of Calvara sector 4 are assessed with high confidence to be conducted by the same operator group, designated VARTA.
+
+VARTA uses commercial quadcopters with modified firmware and launches from vehicles parked up to 3 km away. The reconnaissance pattern suggests preparation for physical intrusion.
+
+Collection on VARTA continues under operation TALON-8812.

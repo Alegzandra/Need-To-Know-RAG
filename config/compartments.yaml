@@ -1,0 +1,4 @@
+# Declared compartments. Documents with any other compartment are rejected at ingest (fail closed).
+compartments:
+  - ORION
+  - HALCYON

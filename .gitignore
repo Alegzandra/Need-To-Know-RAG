@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Virtual environments (PyCharm may name it venv or .venv)
+.venv/
+# Guard: venv files that end up in the project root by mistake
+pyvenv.cfg
+CACHEDIR.TAG
+/Lib/
+/Include/
+venv/
+# Guard: venv files that end up in the project root by mistake
+pyvenv.cfg
+CACHEDIR.TAG
+/Lib/
+/Include/
+env/
+# Guard: venv files that end up in the project root by mistake
+pyvenv.cfg
+CACHEDIR.TAG
+/Lib/
+/Include/
+
+# IDEs
+.idea/
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local runtime data (created when you run the project)
+data/qdrant/
+data/audit/
+evals/results/

@@ -1,0 +1,7 @@
+SECRET//HALCYON
+DOC-ID: HAL-2026-004
+TITLE: HALCYON - source protection note
+
+Information from the HALCYON source must not be shared outside the compartment and must never be combined with ORION reporting in the same product.
+
+Reference HERON-5530.

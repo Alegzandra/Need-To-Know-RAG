@@ -1,0 +1,21 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: sudo apt-get update && sudo apt-get install -y tesseract-ocr tesseract-ocr-ron fonts-dejavu-core
+      - run: pip install -e ".[dev]"
+      - run: ruff check .
+      - run: pytest -q -rs          # includes LangChain, LangGraph, Qdrant (in-memory) and FastAPI tests
+  deploy-artifacts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: azure/setup-helm@v4
+      - run: helm lint deploy/helm/ntk-rag
+      - run: helm template ntk deploy/helm/ntk-rag > /dev/null
+      - run: docker build -t ntk-rag:ci .

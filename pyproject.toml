@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ntk-rag"
+version = "0.1.0"
+description = "Need-to-know RAG: clearance-aware, multilingual (RO/EN) document intelligence on gpt-oss"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Alexandra Ciobotaru" }]
+dependencies = [
+  "pydantic>=2.6",
+  "numpy>=1.26",
+  "pypdf>=4.0",
+  "pillow>=10.1",
+  "pyyaml>=6.0",
+  "langchain-core>=1.0",
+  "langchain-ollama>=1.0",
+  "langgraph>=1.0",
+  "qdrant-client>=1.12",
+  "fastapi>=0.115",
+  "uvicorn>=0.30",
+]
+
+[project.optional-dependencies]
+vllm = ["langchain-openai>=1.0"]
+dev = ["pytest>=8", "httpx>=0.27", "reportlab>=4", "ruff>=0.6"]
+
+[project.scripts]
+ntk = "ntk.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["ntk*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["tests"]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint.per-file-ignores]
+"ntk/api/app.py" = ["B008"]  # FastAPI dependency-injection idiom

@@ -1,0 +1,66 @@
+# Demo users. API keys are stored ONLY as SHA-256 hashes.
+# Demo keys (for local testing only): demo-<id>, e.g. demo-ana. Generate new ones with: ntk hash-key <key>
+users:
+  - id: ana
+    name: Ana Popescu
+    clearance: RESTRICTED
+    compartments: []
+    nationality: ROU
+    groups: []
+    roles: [analyst]
+    pii_access: false
+    api_key_sha256: f401e1a64d1a602268ceae651cd1db3925b9f559f5ff98cc8e4330b34a1fc1c3
+  - id: mihai
+    name: Mihai Ionescu
+    clearance: CONFIDENTIAL
+    compartments: []
+    nationality: ROU
+    groups: [NATO, EU]
+    roles: [analyst]
+    pii_access: false
+    api_key_sha256: d55ae7aa3966bf689cbf334be88bf3f57098cf0268bacb98730bb65e59a67582
+  - id: sorin
+    name: Sorin Dumitru
+    clearance: SECRET
+    compartments: []
+    nationality: ROU
+    groups: [NATO, EU]
+    roles: [analyst]
+    pii_access: false
+    api_key_sha256: 582dc41f1b442c97648a585ed94f03aab0e9529b5d8618e1e2291e567770568a
+  - id: elena
+    name: Elena Vasilescu
+    clearance: SECRET
+    compartments: [ORION]
+    nationality: ROU
+    groups: [NATO, EU]
+    roles: [analyst]
+    pii_access: true
+    api_key_sha256: ad58f014bc72c62410bbd1e8ac5af10036ab45c6690744838173e65f3574604f
+  - id: klaus
+    name: Klaus Becker (NATO liaison)
+    clearance: CONFIDENTIAL
+    compartments: []
+    nationality: DEU
+    groups: [NATO, EU]
+    roles: [analyst]
+    pii_access: false
+    api_key_sha256: 25ee9cddb976ab3d1af7f53638a5019f3e4aa263bee4fe84fd57e08e9ba2f2cd
+  - id: admin
+    name: Document Control
+    clearance: UNCLASSIFIED
+    compartments: []
+    nationality: ROU
+    groups: []
+    roles: [admin]
+    pii_access: false
+    api_key_sha256: cce7a2cf1ae045989cfc914fb95a41526f167a838b3c7d33745143614abace7c
+  - id: auditor
+    name: Security Auditor
+    clearance: UNCLASSIFIED
+    compartments: []
+    nationality: ROU
+    groups: []
+    roles: [auditor]
+    pii_access: false
+    api_key_sha256: 0515e564e3cdc6608115c45f19c07d2d8cc85a6dd5c99d900626720ae1e7f875

@@ -1,0 +1,11 @@
+CONFIDENTIAL//REL TO ROU, NATO
+DOC-ID: ASM-2026-031
+TITLE: Port of Calvara perimeter security assessment
+
+(U) This assessment covers the land perimeter of the Port of Calvara container terminal, inspected between 10 and 14 October 2026.
+
+(C) A 40-metre gap in the inner fence of sector 4 is hidden from the main gate by stacked containers. Two CCTV cameras covering sector 4 have been offline since August. Assessment codeword KESTREL-4471.
+
+(C) Drone overflights of sector 4 were recorded on five nights in October, always between 01:00 and 03:00.
+
+(R) Recommendations: repair the sector 4 fence, restore CCTV coverage, and add a night patrol between 00:00 and 04:00.

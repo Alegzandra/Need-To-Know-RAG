@@ -1,0 +1,6 @@
+apiVersion: v2
+name: ntk-rag
+description: Need-to-know RAG API (clearance-aware retrieval over Qdrant, gpt-oss via vLLM or Ollama)
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

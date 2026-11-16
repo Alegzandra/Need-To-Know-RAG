@@ -1,0 +1,9 @@
+CONFIDENTIAL
+DOC-ID: CYB-2026-009
+TITLE: Incident cibernetic la operatorul de apă Apa Nord
+
+Pe 21 octombrie 2026, contul de e-mail al unui angajat din departamentul financiar al operatorului Apa Nord a fost compromis printr-un mesaj de phishing care imita un furnizor de pompe.
+
+Atacatorii au trimis o factură falsă, iar o plată de 184.000 lei a fost transferată în contul RO90 ZZZZ 0000 1234 5678 9012. Persoana de contact pentru investigaţie este c.marin@apanord.example.
+
+Sistemele SCADA nu au fost afectate. Cod de caz: MERLIN-3390.
